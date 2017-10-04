@@ -1,3 +1,5 @@
+% -*- Mode: Prolog -*-
+
 #maxint=10000.  % No need to count beyond 10000.
 
 % Election results
