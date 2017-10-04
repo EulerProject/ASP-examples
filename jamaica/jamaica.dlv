@@ -1,0 +1,93 @@
+#maxint=10000.  % No need to count beyond 10000.
+
+% Election results
+seats(linke, 69). seats(spd, 153). seats(union, 246).
+seats(gruene, 67). seats(fdp, 80). seats(afd, 94).
+
+% Each party P is either in or out of government 
+in(P) v out(P) :- seats(P,_).
+
+% Government Total [seats]
+gov(GT) :- #int(GT), #sum{S: in(P), seats(P,S)} = GT.
+
+% Opposition Total [seats]
+opp(OT) :- #int(OT), #sum{S: out(P), seats(P,S)} = OT.
+
+% Can't have no opposition (although it sometimes feels like it ;-)
+false :- opp(0).
+
+% The government must have an absolute majority
+false :- gov(GovTotal), opp(OppTotal), GovTotal <= OppTotal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Kill inconsistent worlds
+:- false.		     

@@ -1,0 +1,2 @@
+% no GroKo (Grosse Koalition)
+false :- in(union),in(spd).
